@@ -11,6 +11,7 @@
 		17480A5526AC4D7000DB9737 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17480A5426AC4D7000DB9737 /* ContentView.swift */; };
 		17480A5726AC4D7400DB9737 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17480A5626AC4D7400DB9737 /* Assets.xcassets */; };
 		17480A5A26AC4D7400DB9737 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17480A5926AC4D7400DB9737 /* Preview Assets.xcassets */; };
+		17480A6826AC4DDC00DB9737 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17480A6726AC4DDC00DB9737 /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		17480A5626AC4D7400DB9737 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17480A5926AC4D7400DB9737 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		17480A5B26AC4D7400DB9737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17480A6726AC4DDC00DB9737 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 		17480A5126AC4D7000DB9737 /* coocal-ios */ = {
 			isa = PBXGroup;
 			children = (
+				17480A6226AC4D9000DB9737 /* components */,
 				17480A5226AC4D7000DB9737 /* coocal_iosApp.swift */,
 				17480A5426AC4D7000DB9737 /* ContentView.swift */,
 				17480A5626AC4D7400DB9737 /* Assets.xcassets */,
@@ -67,6 +70,46 @@
 				17480A5926AC4D7400DB9737 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		17480A6226AC4D9000DB9737 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				17480A6626AC4DC500DB9737 /* pages */,
+				17480A6526AC4DB900DB9737 /* organisms */,
+				17480A6426AC4DB100DB9737 /* molecules */,
+				17480A6326AC4DA400DB9737 /* atoms */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		17480A6326AC4DA400DB9737 /* atoms */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = atoms;
+			sourceTree = "<group>";
+		};
+		17480A6426AC4DB100DB9737 /* molecules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = molecules;
+			sourceTree = "<group>";
+		};
+		17480A6526AC4DB900DB9737 /* organisms */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = organisms;
+			sourceTree = "<group>";
+		};
+		17480A6626AC4DC500DB9737 /* pages */ = {
+			isa = PBXGroup;
+			children = (
+				17480A6726AC4DDC00DB9737 /* Home.swift */,
+			);
+			path = pages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17480A5526AC4D7000DB9737 /* ContentView.swift in Sources */,
+				17480A6826AC4DDC00DB9737 /* Home.swift in Sources */,
 				17480A5326AC4D7000DB9737 /* coocal_iosApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
