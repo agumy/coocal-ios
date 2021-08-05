@@ -14,7 +14,9 @@
 		17480A6826AC4DDC00DB9737 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17480A6726AC4DDC00DB9737 /* Home.swift */; };
 		17480A7026AC534800DB9737 /* MonthlyNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17480A6F26AC534800DB9737 /* MonthlyNavigation.swift */; };
 		17480A7326AC55C600DB9737 /* MonthlyCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17480A7226AC55C600DB9737 /* MonthlyCalendar.swift */; };
-		174C944726BACD1500C90B35 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C944626BACD1500C90B35 /* Calendar.swift */; };
+		174C944C26BC110A00C90B35 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C944B26BC110A00C90B35 /* Date+Utils.swift */; };
+		174C945026BC1FEA00C90B35 /* DateFormatter+template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C944F26BC1FEA00C90B35 /* DateFormatter+template.swift */; };
+		174C945526BC201500C90B35 /* Calendar+generateDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C945426BC201500C90B35 /* Calendar+generateDates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +29,9 @@
 		17480A6726AC4DDC00DB9737 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		17480A6F26AC534800DB9737 /* MonthlyNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyNavigation.swift; sourceTree = "<group>"; };
 		17480A7226AC55C600DB9737 /* MonthlyCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyCalendar.swift; sourceTree = "<group>"; };
-		174C944626BACD1500C90B35 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		174C944B26BC110A00C90B35 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
+		174C944F26BC1FEA00C90B35 /* DateFormatter+template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+template.swift"; sourceTree = "<group>"; };
+		174C945426BC201500C90B35 /* Calendar+generateDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+generateDates.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 		17480A5126AC4D7000DB9737 /* coocal-ios */ = {
 			isa = PBXGroup;
 			children = (
+				174C944926BC101F00C90B35 /* extensions */,
 				17480A6226AC4D9000DB9737 /* components */,
 				17480A5226AC4D7000DB9737 /* coocal_iosApp.swift */,
 				17480A5426AC4D7000DB9737 /* ContentView.swift */,
@@ -108,7 +113,6 @@
 			children = (
 				17480A6F26AC534800DB9737 /* MonthlyNavigation.swift */,
 				17480A7226AC55C600DB9737 /* MonthlyCalendar.swift */,
-				174C944626BACD1500C90B35 /* Calendar.swift */,
 			);
 			path = organisms;
 			sourceTree = "<group>";
@@ -119,6 +123,40 @@
 				17480A6726AC4DDC00DB9737 /* Home.swift */,
 			);
 			path = pages;
+			sourceTree = "<group>";
+		};
+		174C944926BC101F00C90B35 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				174C945326BC1FFF00C90B35 /* Calendar */,
+				174C944E26BC1FD000C90B35 /* DateFormatter */,
+				174C944A26BC107C00C90B35 /* Date */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		174C944A26BC107C00C90B35 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				174C944B26BC110A00C90B35 /* Date+Utils.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		174C944E26BC1FD000C90B35 /* DateFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				174C944F26BC1FEA00C90B35 /* DateFormatter+template.swift */,
+			);
+			path = DateFormatter;
+			sourceTree = "<group>";
+		};
+		174C945326BC1FFF00C90B35 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				174C945426BC201500C90B35 /* Calendar+generateDates.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,11 +228,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				174C945026BC1FEA00C90B35 /* DateFormatter+template.swift in Sources */,
+				174C945526BC201500C90B35 /* Calendar+generateDates.swift in Sources */,
 				17480A5526AC4D7000DB9737 /* ContentView.swift in Sources */,
-				174C944726BACD1500C90B35 /* Calendar.swift in Sources */,
 				17480A7026AC534800DB9737 /* MonthlyNavigation.swift in Sources */,
 				17480A6826AC4DDC00DB9737 /* Home.swift in Sources */,
 				17480A5326AC4D7000DB9737 /* coocal_iosApp.swift in Sources */,
+				174C944C26BC110A00C90B35 /* Date+Utils.swift in Sources */,
 				17480A7326AC55C600DB9737 /* MonthlyCalendar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

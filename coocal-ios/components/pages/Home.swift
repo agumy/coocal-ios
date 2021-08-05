@@ -11,7 +11,7 @@ struct Home: View {
     var body: some View {
         VStack {
             MonthlyNavigation()
-            MonthlyCalendar()
+            MonthlyCalendar(date: Date())
             Spacer()
         }
     }

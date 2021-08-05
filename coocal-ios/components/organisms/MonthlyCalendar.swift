@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct MonthlyCalendar: View {
-    private let WEEK = (Array<Int>)(0..<7)
+    var date: Date
+    
     private let formatter = DateFormatter()
     
     var body: some View {
         VStack {
             LazyVGrid(columns: Array(repeating: GridItem(), count: 7)) {
-                ForEach(WEEK, id: \.self) { n in
+                ForEach(0..<7, id: \.self) { n in
                     Text(formatter.shortWeekdaySymbols[n])
                 }
-                
             }
         }
     }
@@ -25,6 +25,6 @@ struct MonthlyCalendar: View {
 
 struct MonthlyCalendar_Previews: PreviewProvider {
     static var previews: some View {
-        MonthlyCalendar()
+        MonthlyCalendar(date: Date())
     }
 }
