@@ -1,18 +1,6 @@
 import SwiftUI
 
 fileprivate extension DateFormatter {
-    static var month: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM"
-        return formatter
-    }
-    
-    static var monthAndYear: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM yyyy"
-        return formatter
-    }
-    
     static var day: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "d"
@@ -54,17 +42,14 @@ fileprivate extension Calendar {
 struct CalendarView<DateView>: View where DateView: View {
     @Environment(\.calendar) var calendar
     
-    let interval: DateInterval
-    let showHeaders: Bool
+    let targetDate: Date
     let content: (Date) -> DateView
     
     init(
-        interval: DateInterval,
-        showHeaders: Bool = true,
+        targetDate: Date,
         @ViewBuilder content: @escaping (Date) -> DateView
     ) {
-        self.interval = interval
-        self.showHeaders = showHeaders
+        self.targetDate = targetDate
         self.content = content
     }
     
@@ -73,41 +58,19 @@ struct CalendarView<DateView>: View where DateView: View {
             ForEach(0..<7, id: \.self) { n in
                 Text(DateFormatter.week[n])
             }
-            ForEach(months, id: \.self) { month in
-                ForEach(days(for: month), id: \.self) { date in
-                    if calendar.isDate(date, equalTo: month, toGranularity: .month) {
-                        content(date).id(date)
-                    } else {
-                        content(date).hidden()
-                    }
+            ForEach(days(), id: \.self) { date in
+                if calendar.isDate(date, equalTo: targetDate, toGranularity: .month) {
+                    content(date).id(date)
+                } else {
+                    content(date).hidden()
                 }
             }
         }
     }
     
-    private var months: [Date] {
-        calendar.generateDates(
-            inside: interval,
-            matching: DateComponents(day: 1, hour: 0, minute: 0, second: 0)
-        )
-    }
-    
-    private func header(for month: Date) -> some View {
-        let component = calendar.component(.month, from: month)
-        let formatter = component == 1 ? DateFormatter.monthAndYear : .month
-        
-        return Group {
-            if showHeaders {
-                Text(formatter.string(from: month))
-                    .font(.title)
-                    .padding()
-            }
-        }
-    }
-    
-    private func days(for month: Date) -> [Date] {
+    private func days() -> [Date] {
         guard
-            let monthInterval = calendar.dateInterval(of: .month, for: month),
+            let monthInterval = calendar.dateInterval(of: .month, for: targetDate),
             let monthFirstWeek = calendar.dateInterval(of: .weekOfMonth, for: monthInterval.start),
             let monthLastWeek = calendar.dateInterval(of: .weekOfMonth, for: monthInterval.end)
         else { return [] }
@@ -121,7 +84,7 @@ struct CalendarView<DateView>: View where DateView: View {
 struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {
         let formatter = DateFormatter.day
-        CalendarView(interval: .init()) { d in
+        CalendarView(targetDate: Date()) { d in
             Text(formatter.string(from: d))
                 .padding(8)
         }
