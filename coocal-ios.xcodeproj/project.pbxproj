@@ -18,6 +18,7 @@
 		174C945026BC1FEA00C90B35 /* DateFormatter+template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C944F26BC1FEA00C90B35 /* DateFormatter+template.swift */; };
 		174C945526BC201500C90B35 /* Calendar+generateDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C945426BC201500C90B35 /* Calendar+generateDates.swift */; };
 		174C945926BE9D4400C90B35 /* WishList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C945826BE9D4400C90B35 /* WishList.swift */; };
+		174C945C26C0F70200C90B35 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C945B26C0F70200C90B35 /* Calendar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		174C944F26BC1FEA00C90B35 /* DateFormatter+template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+template.swift"; sourceTree = "<group>"; };
 		174C945426BC201500C90B35 /* Calendar+generateDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+generateDates.swift"; sourceTree = "<group>"; };
 		174C945826BE9D4400C90B35 /* WishList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishList.swift; sourceTree = "<group>"; };
+		174C945B26C0F70200C90B35 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			children = (
 				17480A6F26AC534800DB9737 /* MonthlyNavigation.swift */,
 				17480A7226AC55C600DB9737 /* MonthlyCalendar.swift */,
+				174C945B26C0F70200C90B35 /* Calendar.swift */,
 			);
 			path = organisms;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				17480A5326AC4D7000DB9737 /* coocal_iosApp.swift in Sources */,
 				174C944C26BC110A00C90B35 /* Date+Utils.swift in Sources */,
 				17480A7326AC55C600DB9737 /* MonthlyCalendar.swift in Sources */,
+				174C945C26C0F70200C90B35 /* Calendar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

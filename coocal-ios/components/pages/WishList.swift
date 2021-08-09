@@ -9,13 +9,12 @@ import SwiftUI
 
 struct WishList: View {
     var body: some View {
-        ScrollView {
-            Text("メニュー１")
-            Text("メニュー１")
-            Text("メニュー１")
-            Text("メニュー１")
+        HStack {
+            VStack(alignment: .leading) {
+                Text("Hello")
+            }
+            Spacer()
         }
-        .frame(alignment: .trailing)
     }
 }
 
