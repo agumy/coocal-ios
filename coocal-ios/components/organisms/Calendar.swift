@@ -86,7 +86,7 @@ struct CalendarView_Previews: PreviewProvider {
         let formatter = DateFormatter.day
         CalendarView(targetDate: Date()) { d in
             Text(formatter.string(from: d))
-                .padding(8)
+                .padding(4)
         }
     }
 }
