@@ -15,7 +15,7 @@ struct MonthlyNavigation: View {
                 Text("2021/07")
                 Text("→")
                 Spacer()
-                Text("今日")
+                Text("Today")
             }
         }
         .padding()
