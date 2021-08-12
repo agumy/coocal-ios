@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct Home: View {
+    @State private var targetDate = Date()
     let formatter = DateFormatter.day
+
     
     var body: some View {
         VStack {
-            MonthlyNavigation()
-            MonthlyCalendar(targetDate: Date()) { d in
-                Text(formatter.string(from: d))
-                    .padding(4)
+            MonthlyNavigation(targetDate: $targetDate)
+            MonthlyCalendar(targetDate: $targetDate) { d in
+                Button(action: {
+                    self.targetDate = d
+                },label: {
+                    Text(formatter.string(from: d))
+                        .padding(8)
+                })
+                .foregroundColor(.black)
             }
             Spacer()
         }
