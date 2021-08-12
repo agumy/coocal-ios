@@ -7,6 +7,12 @@ extension DateFormatter {
         return formatter
     }
     
+    static var month: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYY / MM"
+        return formatter
+    }
+    
     static var week: [String] {
         let formatter = DateFormatter()
         return formatter.shortWeekdaySymbols
@@ -42,16 +48,8 @@ extension Calendar {
 struct MonthlyCalendar<DateView>: View where DateView: View {
     @Environment(\.calendar) var calendar
     
-    let targetDate: Date
+    @Binding var targetDate: Date
     let content: (Date) -> DateView
-    
-    init(
-        targetDate: Date,
-        @ViewBuilder content: @escaping (Date) -> DateView
-    ) {
-        self.targetDate = targetDate
-        self.content = content
-    }
     
     var body: some View {
         LazyVGrid(columns: Array(repeating: GridItem(), count: 7)) {
@@ -82,10 +80,11 @@ struct MonthlyCalendar<DateView>: View where DateView: View {
 }
 
 struct MonthlyCalendar_Previews: PreviewProvider {
+    @State static var targetDate = Date()
+
     static var previews: some View {
-        let formatter = DateFormatter.day
-        MonthlyCalendar(targetDate: Date()) { d in
-            Text(formatter.string(from: d))
+        MonthlyCalendar(targetDate: $targetDate) { d in
+            Text(DateFormatter.day.string(from: d))
                 .padding(4)
         }
     }
