@@ -13,9 +13,21 @@ struct MonthlyNavigation: View {
     var body: some View {
         VStack {
             HStack {
-                Button(action: {}, label: {Text("←")})
+                Button(action: {
+                    targetDate = Calendar.current.date(
+                        byAdding: .month,
+                        value: -1,
+                        to: targetDate
+                    )!
+                }, label: {Text("←")})
                 Text(DateFormatter.month.string(from: targetDate))
-                Button(action: {}, label: {Text("→")})
+                Button(action: {
+                    targetDate = Calendar.current.date(
+                        byAdding: .month,
+                        value: 1,
+                        to: targetDate
+                    )!
+                }, label: {Text("→")})
                 Spacer()
                 Text("Today")
             }
