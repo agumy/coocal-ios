@@ -17,7 +17,7 @@ struct MonthlyNavigation: View {
                     targetDate = Calendar.current.date(
                         byAdding: .month,
                         value: -1,
-                        to: targetDate
+                        to: $targetDate.wrappedValue
                     )!
                 }, label: {Text("←")})
                 Text(DateFormatter.month.string(from: targetDate))
@@ -25,7 +25,7 @@ struct MonthlyNavigation: View {
                     targetDate = Calendar.current.date(
                         byAdding: .month,
                         value: 1,
-                        to: targetDate
+                        to: $targetDate.wrappedValue
                     )!
                 }, label: {Text("→")})
                 Spacer()
@@ -40,6 +40,6 @@ struct MonthlyNavigation: View {
 struct MonthlyNavigation_Previews: PreviewProvider {
     @State static var targetDate = Date()
     static var previews: some View {
-        MonthlyNavigation(targetDate: $targetDate)
+        MonthlyNavigation(targetDate: .constant(Date()))
     }
 }
