@@ -29,7 +29,9 @@ struct MonthlyNavigation: View {
                     )!
                 }, label: {Text("→")})
                 Spacer()
-                Text("Today")
+                Button(action: {
+                    targetDate = Date()
+                }, label: { Text("Today") })
             }
             .foregroundColor(.black)
         }
