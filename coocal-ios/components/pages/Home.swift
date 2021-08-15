@@ -19,10 +19,17 @@ struct Home: View {
                 Button(action: {
                     self.targetDate = d
                 },label: {
-                    Text(formatter.string(from: d))
-                        .padding(8)
+                    if (Calendar.current.isDate(d, inSameDayAs: Date())) {
+                        Text(formatter.string(from: d))
+                            .padding(8)
+                            .foregroundColor(.blue)
+                    } else {
+                        Text(formatter.string(from: d))
+                            .padding(8)
+                            .foregroundColor(.black)
+                    }
+
                 })
-                .foregroundColor(.black)
             }
             Spacer()
         }
