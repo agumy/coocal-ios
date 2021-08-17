@@ -9,26 +9,40 @@ import SwiftUI
 
 struct Home: View {
     @State private var targetDate = Date()
+    @State private var calendarBaseDate = Date()
     let formatter = DateFormatter.day
-
+    
     
     var body: some View {
         VStack {
-            MonthlyNavigation(targetDate: $targetDate)
-            MonthlyCalendar(targetDate: $targetDate) { d in
+            MonthlyNavigation(targetDate: $calendarBaseDate)
+            MonthlyCalendar(targetDate: $calendarBaseDate) { d in
                 Button(action: {
-                    self.targetDate = d
+                    self.calendarBaseDate = d
                 },label: {
-                    if (Calendar.current.isDate(d, inSameDayAs: Date())) {
+                    if (Calendar.current.isDate(d, inSameDayAs: targetDate))  {
+                        Text(formatter.string(from: d))
+                            .bold()
+                            .padding(8)
+                            .foregroundColor(.white)
+                            .background(Color.black)
+                            .cornerRadius(20)
+                    } else if (Calendar.current.isDate(d, inSameDayAs: Date())) {
                         Text(formatter.string(from: d))
                             .padding(8)
-                            .foregroundColor(.blue)
+                            .foregroundColor(.red)
+                            .onTapGesture {
+                                self.targetDate = d
+                            }
                     } else {
                         Text(formatter.string(from: d))
                             .padding(8)
                             .foregroundColor(.black)
+                            .onTapGesture {
+                                self.targetDate = d
+                            }
                     }
-
+                    
                 })
             }
             Spacer()
