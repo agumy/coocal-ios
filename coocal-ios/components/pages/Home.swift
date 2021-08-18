@@ -25,7 +25,7 @@ struct Home: View {
                             .bold()
                             .padding(8)
                             .foregroundColor(.white)
-                            .background(Color.black)
+                            .background(Color.red)
                             .cornerRadius(20)
                     } else if (Calendar.current.isDate(d, inSameDayAs: Date())) {
                         Text(formatter.string(from: d))
