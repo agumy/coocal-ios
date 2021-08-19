@@ -22,3 +22,4 @@ struct Ingredient: Codable {
     let amount: String;
     let hasThis: Bool;
 }
+a
