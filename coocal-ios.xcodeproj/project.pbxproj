@@ -19,6 +19,7 @@
 		174C945526BC201500C90B35 /* Calendar+generateDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C945426BC201500C90B35 /* Calendar+generateDates.swift */; };
 		174C945926BE9D4400C90B35 /* WishList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C945826BE9D4400C90B35 /* WishList.swift */; };
 		174C946226CE7DAA00C90B35 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C946126CE7DAA00C90B35 /* Menu.swift */; };
+		174C946826CFD6DF00C90B35 /* MenuRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C946726CFD6DF00C90B35 /* MenuRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		174C945426BC201500C90B35 /* Calendar+generateDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+generateDates.swift"; sourceTree = "<group>"; };
 		174C945826BE9D4400C90B35 /* WishList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishList.swift; sourceTree = "<group>"; };
 		174C946126CE7DAA00C90B35 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		174C946726CFD6DF00C90B35 /* MenuRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		17480A5126AC4D7000DB9737 /* coocal-ios */ = {
 			isa = PBXGroup;
 			children = (
+				174C946526CFD6B500C90B35 /* repository */,
 				174C946026CE7D9200C90B35 /* models */,
 				174C944926BC101F00C90B35 /* extensions */,
 				17480A6226AC4D9000DB9737 /* components */,
@@ -173,6 +176,14 @@
 			path = models;
 			sourceTree = "<group>";
 		};
+		174C946526CFD6B500C90B35 /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				174C946726CFD6DF00C90B35 /* MenuRepository.swift */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -249,6 +260,7 @@
 				174C946226CE7DAA00C90B35 /* Menu.swift in Sources */,
 				17480A6826AC4DDC00DB9737 /* Home.swift in Sources */,
 				174C945926BE9D4400C90B35 /* WishList.swift in Sources */,
+				174C946826CFD6DF00C90B35 /* MenuRepository.swift in Sources */,
 				17480A5326AC4D7000DB9737 /* coocal_iosApp.swift in Sources */,
 				174C944C26BC110A00C90B35 /* Date+Utils.swift in Sources */,
 				17480A7326AC55C600DB9737 /* MonthlyCalendar.swift in Sources */,
