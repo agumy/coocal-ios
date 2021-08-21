@@ -48,3 +48,7 @@ func searchGithubUser(query: String) {
         }    }
     task.resume()
 }
+
+func fetchMenus() {
+    
+}
