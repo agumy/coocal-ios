@@ -31,7 +31,7 @@ struct User: Codable {
     }
 }
 
-func searchGithubUser(query: String) {
+func searchGithubUser(query: String, completion: @escaping (User) -> ()) {
     let url = URL(string: "https://api.github.com/search/users?q=" + query)!
     let request = URLRequest(url: url)
     let config = URLSessionConfiguration.default
@@ -41,7 +41,7 @@ func searchGithubUser(query: String) {
         do {
             let decoder = JSONDecoder()
             let user: User = try decoder.decode(User.self, from: data)
-            print(user)
+            completion(user)
         } catch let e {
             print("JSON Decode Error :\(e)")
             fatalError()
