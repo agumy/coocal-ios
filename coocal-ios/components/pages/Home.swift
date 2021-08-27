@@ -34,9 +34,6 @@ struct Home: View {
                             .foregroundColor(.red)
                             .onTapGesture {
                                 self.targetDate = d
-                                searchGithubUser(query: "agumy", completion: { data in
-                                    self.data = data
-                                })
                             }
                     } else {
                         Text(formatter.string(from: d))
@@ -44,9 +41,6 @@ struct Home: View {
                             .foregroundColor(.black)
                             .onTapGesture {
                                 self.targetDate = d
-                                searchGithubUser(query: "agumy", completion: { data in
-                                    self.data = data
-                                })
                             }
                     }
                     
