@@ -19,7 +19,7 @@ struct MonthlyNavigation: View {
                         value: -1,
                         to: $targetDate.wrappedValue
                     )!
-                }, label: {Text("←")})
+                }, label: {Image(systemName: "arrow.left")})
                 Text(DateFormatter.month.string(from: targetDate))
                 Button(action: {
                     targetDate = Calendar.current.date(
@@ -27,7 +27,7 @@ struct MonthlyNavigation: View {
                         value: 1,
                         to: $targetDate.wrappedValue
                     )!
-                }, label: {Text("→")})
+                }, label: { Image(systemName: "arrow.right") })
                 Spacer()
                 Button(action: {
                     targetDate = Date()
